@@ -94,7 +94,11 @@ namespace HammingCode.Controllers
             checkcode = checkcode.Replace("True", "1").Replace("False", "0");
             ViewBag.Control = checkcode;
             ViewBag.Wrong = Convert.ToInt32(checkcode, 2);
-            bitArray[ViewBag.Wrong-1] = !bitArray[ViewBag.Wrong - 1];
+            if (ViewBag.Wrong != 0)
+            {
+                bitArray[ViewBag.Wrong - 1] = !bitArray[ViewBag.Wrong - 1];
+            }
+            else ViewBag.Wrong = "N/A";
             string symbolcode = bitArray[2].ToString() + bitArray[4].ToString() + bitArray[5].ToString() + bitArray[6].ToString() +
                 bitArray[8].ToString() + bitArray[9].ToString() + bitArray[10].ToString();
             symbolcode = symbolcode.Replace("True", "1").Replace("False", "0");
