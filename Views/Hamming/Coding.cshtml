@@ -1,0 +1,23 @@
+﻿@model HammingCode.Models.HammingModel
+
+@{
+    ViewData["Title"]="Coding";
+    List<string> symbols = new List<string>();
+    for(int i = 0; i < 128; i++)
+    {
+        symbols.Add(i.ToString()+" ("+((char)i).ToString()+")");
+    }
+    SelectList symbolsselect = new SelectList(symbols);
+}
+<h1>Coding</h1>
+
+<p>
+    <form class="form-inline" method="post">
+        @Html.DropDownList("symbol",symbolsselect,"Select Symbol")
+        <input name="textboxsymbol" asp-for="Symbol" class="form-control" />
+        <span asp-validation-for="Symbol" class="text-danger"></span>
+       <button type="submit" class="btn btn-secondary">Code</button>
+    </form>
+    <a asp-controller="Home" asp-action="Index">Back</a>
+
+</p>

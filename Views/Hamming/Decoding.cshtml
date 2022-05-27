@@ -1,0 +1,15 @@
+﻿@model HammingCode.Models.HammingModel
+@{
+	ViewData["Title"] = "Decoding";
+}
+<h1>Decoding</h1>
+
+<p>
+    <form class="form-inline" method="post">
+        <input name="code.Decode" asp-for="Decode" class="form-control" value=@ViewData["Code"] />
+        <span asp-validation-for="Decode" class="text-danger"></span>
+       <button type="submit" class="btn btn-secondary">Decode</button>
+    </form>
+    <a asp-controller="Home" asp-action="Index">Back</a>
+
+</p>

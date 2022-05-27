@@ -1,0 +1,43 @@
+﻿@model HammingCode.Models.HammingModel
+@{
+	ViewData["Title"] = "Result of decoding";
+}
+<h1>Result</h1>
+
+<div>
+    <h4>Code</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Accepted code")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Decode)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Control bits")
+        </dt>
+        <dd class = "col-sm-10">
+            <p>@ViewData["Control"]</p>
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Wrong bit")
+        </dt>
+        <dd class = "col-sm-10">
+           <p>@ViewData["Wrong"]</p>
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Correct code")
+        </dt>
+        <dd class = "col-sm-10">
+            <p>@ViewData["CorrectCode"]</p>
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Symbol")
+        </dt>
+        <dd class = "col-sm-10">
+            <p>'@Html.DisplayFor(model => model.Symbol)'</p>
+        </dd>
+    </dl>
+</div>
+<a asp-controller="Home" asp-action="Index">Back</a>

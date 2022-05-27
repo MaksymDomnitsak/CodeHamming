@@ -1,0 +1,27 @@
+﻿@model HammingCode.Models.HammingModel
+
+@{
+	ViewData["Title"]="Result";
+}
+<h1>Result</h1>
+
+<div>
+    <h4>Code</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Symbol")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Symbol)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayName("Code")
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Decode)
+        </dd>
+    </dl>
+</div>
+<a asp-controller="Home" asp-action="Index">Back</a>
+<a asp-controller="Hamming" asp-action="Decoding" asp-route-stringcode=@Model.Decode>Decode</a>
